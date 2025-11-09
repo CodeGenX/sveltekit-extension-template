@@ -1,14 +1,39 @@
 {
-	"name": "sveltekit-extension-template",
-	"description": "Example Chrome extension built with Sveltekit and Skeleton",
-	"version": "0.0.1",
-	"manifest_version": 3,
-	"icons": {
-		"32": "favicon.png"
-	},
-	"action": {
-		"default_popup": "index.html",
-		"default_icon": "favicon.png",
-		"default_title": "sveltekit-extension-template"
-	}
+  "manifest_version": 3,
+  "name": "QB Chrome Extension",
+  "version": "2.0.0",
+  "description": "Modern QuickBooks bill and payment entry tool with Side Panel UI, built with Svelte/SvelteKit",
+  "minimum_chrome_version": "114",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "alarms",
+    "notifications",
+    "sidePanel",
+    "scripting"
+  ],
+
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+
+  "side_panel": {
+    "default_path": "index.html"
+  },
+
+  "action": {
+    "default_title": "Open QB Chrome Extension"
+  },
+
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/background/service-worker.ts"],
+  "sourcesContent": ["/**\n * QB Chrome Extension - Service Worker (Background Script)\n *\n * Minimal Manifest v3 service worker implementation for Story 1.1.2.\n * Handles extension lifecycle and opens Side Panel on toolbar icon click.\n *\n * Future enhancements (subsequent stories):\n * - Story 1.2.1: Full service worker with message bus and alarm handlers\n * - Story 2.1.2: Chrome alarms for bill reminders\n * - Story 2.2.3: Approval workflow polling\n */\n\n/**\n * Extension Installation/Update Handler\n * Logs installation events for debugging and future setup logic\n */\nchrome.runtime.onInstalled.addListener((details) => {\n  console.log('QB Chrome Extension installed', details.reason);\n\n  // Future: Initialize default settings in chrome.storage\n  // Future: Set up alarm schedules\n  // Future: Configure initial Side Panel state\n});\n\n/**\n * Toolbar Icon Click Handler\n * Opens Side Panel when user clicks extension icon in Chrome toolbar\n */\nchrome.action.onClicked.addListener((tab) => {\n  if (tab.windowId) {\n    chrome.sidePanel.open({ windowId: tab.windowId });\n  }\n});\n"],
+  "mappings": ";AAgBA,OAAO,QAAQ,YAAY,YAAY,CAAC,YAAY;AAClD,UAAQ,IAAI,iCAAiC,QAAQ,MAAM;AAK7D,CAAC;AAMD,OAAO,OAAO,UAAU,YAAY,CAAC,QAAQ;AAC3C,MAAI,IAAI,UAAU;AAChB,WAAO,UAAU,KAAK,EAAE,UAAU,IAAI,SAAS,CAAC;AAAA,EAClD;AACF,CAAC;",
+  "names": []
+}
